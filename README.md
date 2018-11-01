@@ -10,10 +10,10 @@ The proposed features for the app are as follows:
 - **User will be able to search for a particular year.**
 - **User will be able to bookmark a comic out of the ones returned from a searched year.**
 - **User will be able to view all comics he has bookmarked.**
-- **User should be able to like a comic. One:many relationship**
+- **User should be able to like a comic. [One:many relationship]**
 - **User will be able to view all comics he has liked.** 
 - **User will be able to view a list of all registered users in the application.**
-- **User will be able to list all years he has previously searched. One:many relationship w/in year and collections.**
+- **User will be able to list all years he has previously searched. [One:many relationship w/in year and collections.]**
 
 #** Available Routes are as follows:
 
