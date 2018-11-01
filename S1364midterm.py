@@ -1,5 +1,4 @@
 #** Nunez,Priscilla 
-#** SI 364 
 #** Fall 2018
 #** SI364 midterm
 
