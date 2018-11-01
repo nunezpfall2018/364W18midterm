@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content1 %}
+ <br>
+
+ <h1>Registered Users</h1>
+ <ul>
+    {% for n in names %}
+        <li>{{ n.name }}
+                {% if n.name == username %}
+                    <b>(You)</b>
+                {% endif %}
+    </li>
+        
+    {% endfor %}
+ </ul>
+ 
+ {% endblock %}

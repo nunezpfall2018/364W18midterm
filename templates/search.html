@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content1 %}
+    <br>
+
+
+<form method ="post">
+    {{ form.searchStartYear.label() }}{{ form.searchStartYear() }}
+    {{ form.submit() }} {{ form.hidden_tag() }}
+  </form>
+
+  {% if results| length %}
+  <h1>Search results</h1>
+     {% for m in results %}
+         <div>
+             <h1>{{ m['title']}}</h1>
+             <img src="{{m['thumbnail']['path']+ '.' + m['thumbnail']['extension']}}"/>
+             <h3>
+                 {{ m['description']}}
+             </h3>
+             <form method ="post" action="/like">
+                    {{ form2.comic(value = m) }}
+                    {{ form2.submit() }} {{ form.hidden_tag() }}
+              </form>
+
+              <form method ="post" action="/bookmark">
+                    {{ form3.comic(value = m) }}
+                    {{ form3.submit() }} {{ form.hidden_tag() }}
+              </form>
+        </div>
+     {% endfor %}
+     {% endif %}
+     <div>
+            {% for message in get_flashed_messages() %}
+                <strong>{{ message }}</strong>
+            {% endfor %}
+    </div>
+{% endblock %}

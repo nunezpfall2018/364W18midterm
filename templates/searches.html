@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content1 %}
+ <br>
+ 
+ <h1>Years You have searched</h1>
+ <ul>
+    {% for s in searches %}
+        <li>{{ s["searchStartYear"] }}</li>
+        
+    {% endfor %}
+ </ul>
+ 
+ {% endblock %}

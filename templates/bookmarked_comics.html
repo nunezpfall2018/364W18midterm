@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content1 %}
+ <br>
+ 
+  <h1>You Bookmarked the following comics</h1>
+     {% for m in results %}
+         <div>
+             <h1>{{ m['comic']['title']}}</h1>
+             <img src="{{m['comic']['thumbnail']['path']+ '.' + m['comic']['thumbnail']['extension']}}"/>
+             <h3>
+                 {{ m['comic']['description']}}
+             </h3>
+        </div>
+     {% endfor %}
+{% endblock %}

@@ -1,0 +1,6 @@
+{% block content1 %}
+<form method ="post">
+    {{ form.name.label() }}{{ form.name() }}
+    {{ form.submit() }} {{ form.hidden_tag() }}
+  </form>
+{% endblock %}
