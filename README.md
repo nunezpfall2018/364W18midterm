@@ -28,7 +28,7 @@ The proposed features for the app are as follows:
 - http://locahost:50000/logout -> none
 
 
-#** All requirements have been met with original code. NunezP 
+#** All requirements have been met. NunezP 
 
  - **Ensure that the SI364midterm.py file has all the setup (app.config values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on http://localhost:5000 (and the other routes you set up)
  Add navigation in base.html with links (using a href tags) that lead to every other viewable page in the application. (e.g. in the lecture examples from the Feb 9 lecture, like this )**
