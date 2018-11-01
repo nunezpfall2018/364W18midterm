@@ -1,9 +1,9 @@
 #** Nunez,Priscilla  
-#** Fall 2018
-#** SI364 midterm
+#** Fall 2018 • SI364 midterm
 
-#** Marvel Comic Collection App
-This app allows a user to register and be able to search for Marvels Comics Collection for a particular year.
+
+#** Marvel Comic Collection App **
+App allows a user to register and be able to search for Marvels Comics Collection for a particular year.
 The proposed features for the app are as follows:
 
 - **User will be able to register / login to the app. No password required.**
@@ -64,7 +64,7 @@ These could be in the same template, and could be 1 of the 2 additional template
  
  - **Have at least 3 view functions that are not included with the code we have provided. (But you may have more! Make sure you include ALL view functions in the app in the documentation and ALL pages in the app in the navigation links of base.html.)**
 
-#** NunezP original code - Additional Requirements for an additional 200 points (to reach 100%) -- an app with extra functionality - requirements met.
+#** NunezP original code - Additional requirements met for an additional 200 points (to reach 100%) -- an app with extra functionality.
 
 - **(100 points) Include an additional model class (to make at least 4 total in the application) with at least 3 columns. Save data to it AND query data from it; use the data you query in a view-function, and as a result of querying that data, something should show up in a view. (The data itself should show up, OR the result of a request made with the data should show up.)**
 
