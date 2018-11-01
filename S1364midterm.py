@@ -175,7 +175,7 @@ def search():                                         #** 3 forms created • se
             })
         json_format = json.loads(comics.text)
         results = json_format['data']['results']
-    errors = [v for v in form.errors.values()]                  #** Error values
+    errors = [v for v in form.errors.values()]                   #** Error values
     if len(errors) > 0:
         print(len(errors))
         flash("!!!! ERRORS IN FORM SUBMISSION - " + str(errors)) #** Flashes error
