@@ -1,19 +1,22 @@
-# SI 364 - Fall 2018 - Midterm Assignment
+#** Nunez,Priscilla 
+#** SI 364 
+#** Fall 2018
+#** SI364 midterm
 
-## Marvel Commic Collection App
-This app allows a user to register and be able to search for marvels comics collection for a particular year.
-the proposed features for the app are:
+#** Marvel Comic Collection App
+This app allows a user to register and be able to search for Marvels Comics Collection for a particular year.
+The proposed features for the app are as follows:
 
-- **User will be able to register / login to the app.**
-- **User will be able to search for a particular year he want to see the marvel comics for.**
-- **User will be able to bookmark a comic out of the ones returned from a search year**
-- **User will be able to view all comics he has bookmarked**
-- **User should be able to like a comic**
-- **User will be able to view all comics he has liked**
-- **User will be able to view a list of all registered users in the application**
-- **User will be able to list all years he has previously searched**
+- **User will be able to register / login to the app. No password required.**
+- **User will be able to search for a particular year.**
+- **User will be able to bookmark a comic out of the ones returned from a searched year.**
+- **User will be able to view all comics he has bookmarked.**
+- **User should be able to like a comic. One:many relationship**
+- **User will be able to view all comics he has liked.** 
+- **User will be able to view a list of all registered users in the application.**
+- **User will be able to list all years he has previously searched. One:many relationship w/in year and collections.**
 
-## Available Route are
+#** Available Routes are as follows:
 
 - http://locahost:50000 -> index.html
 - http://locahost:50000/search -> search.html
@@ -26,9 +29,7 @@ the proposed features for the app are:
 - http://locahost:50000/logout -> none
 
 
-# Requirements
-
-## Documentation Requirements (so we can grade the assignments)
+#** All requirements have been met with original code. NunezP 
 
  - **Ensure that the SI364midterm.py file has all the setup (app.config values, import statements, code to run the app if that file is run, etc) necessary to run the Flask application, and the application runs correctly on http://localhost:5000 (and the other routes you set up)
  Add navigation in base.html with links (using a href tags) that lead to every other viewable page in the application. (e.g. in the lecture examples from the Feb 9 lecture, like this )**
@@ -64,7 +65,7 @@ These could be in the same template, and could be 1 of the 2 additional template
  
  - **Have at least 3 view functions that are not included with the code we have provided. (But you may have more! Make sure you include ALL view functions in the app in the documentation and ALL pages in the app in the navigation links of base.html.)**
 
-## Additional Requirements for an additional 200 points (to reach 100%) -- an app with extra functionality!
+#** NunezP original code - Additional Requirements for an additional 200 points (to reach 100%) -- an app with extra functionality - requirements met.
 
 - **(100 points) Include an additional model class (to make at least 4 total in the application) with at least 3 columns. Save data to it AND query data from it; use the data you query in a view-function, and as a result of querying that data, something should show up in a view. (The data itself should show up, OR the result of a request made with the data should show up.)**
 
