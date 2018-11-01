@@ -49,11 +49,11 @@ db = SQLAlchemy(app)
 
 @login_manager.user_loader
 def load_user(name):
-    return Name.query.filter_by(name = name).first()                                        #** Database login manager
+    return Name.query.filter_by(name = name).first()                                         #** Database login manager
 
 def is_valid_year(form, field):
     if field.data and field.data.isdigit():
-        if int(field.data) >=1990 and int(field.data) <=2019:                               #** User cannot enter year past 2019
+        if int(field.data) >=1990 and int(field.data) <=2019:                                #** User cannot enter year past 2019
             return True
     raise ValidationError('Please Enter a valid year between 1990 and 2019')     
 
@@ -91,8 +91,8 @@ class Like(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     nameId = db.Column(db.Integer, db.ForeignKey('names.id'))
 
-    #** New ** JSON datatype - Postgres gives opportunity to save JSON objects in the database 
-    comic = db.Column(JSON)    #** Example: in Bookmarks database you will be able to view the datatype information saved!
+                                                                    #** New ** JSON datatype - Postgres gives opportunity to save JSON objects in the database 
+    comic = db.Column(JSON)                                         #** Example: in Bookmarks database you will be able to view the datatype information saved!
 
 class Bookmark(db.Model):
     __tablename__ = "bookmarks"
@@ -114,11 +114,11 @@ class SearchForm(FlaskForm):
     submit = SubmitField()
 
 class LikeForm(FlaskForm):
-    comic = HiddenField("hidden")                   #** New ** HiddenField - form recieves data, the user will be able to click like and secretly pass the liked comic w/out viewing a form. 
+    comic = HiddenField("hidden")                      #** New ** HiddenField - form recieves data, the user will be able to click like and secretly pass the liked comic w/out viewing a form. 
     submit = SubmitField("Like")
 
 class BookmarkForm(FlaskForm):
-    comic = HiddenField("hidden")                   #** New ** HiddenField - form recieves data, the user will be able to click bookmark and secretly pass the bookmarked comic w/out viewing a form. 
+    comic = HiddenField("hidden")                      #** New ** HiddenField - form recieves data, the user will be able to click bookmark and secretly pass the bookmarked comic w/out viewing a form. 
     submit = SubmitField("bookmark")
 
 #######################
@@ -127,19 +127,19 @@ class BookmarkForm(FlaskForm):
 
 @app.route('/', methods = ["POST", "GET"])
 def home():
-    if hasattr(current_user, 'name'):               #** On the homepage - if user is already logged in the user is redirected to search page. User does not need to enter a password but can select to logout (later on). Please reference Name Model and NameForm Class.
+    if hasattr(current_user, 'name'):                  #** On the homepage - if user is already logged in the user is redirected to search page. User does not need to enter a password but can select to logout (later on). Please reference Name Model and NameForm Class.
         return redirect(url_for('search'))
-    form = NameForm()                               #** User should be able to enter name after name and each one will be saved, even if it's a duplicate! Sends data with GET
+    form = NameForm()                                  #** User should be able to enter name after name and each one will be saved, even if it's a duplicate! Sends data with GET
     if form.validate_on_submit():
         name = form.name.data
         newname = Name.query.filter_by(name = name).first()
         if not newname:
             newname = Name(name=name)
-            db.session.add(newname)                 #** If login_user does not exists the user will be added and redirected to homepage.
+            db.session.add(newname)                    #** If login_user does not exists the user will be added and redirected to homepage.
             db.session.commit()
             newname = Name.query.filter_by(name = name).first()
         login_user(newname)
-        return redirect(url_for('all_names'))         #** Midterm requirement
+        return redirect(url_for('all_names'))          #** Midterm requirement
     return render_template('index.html', form=form)
 
 
@@ -185,7 +185,7 @@ def search():                                         #** 3 forms created • se
 
 
 @app.route('/like', methods = ["POST"])
-@login_required                                         #** logged into the system before performing requests
+@login_required                                                  #** logged into the system before performing requests
 def like_comic():
     username = current_user.name                        
     form = LikeForm()
@@ -251,7 +251,7 @@ def logout():
 
 
 
-@app.errorhandler(401)           #** Required error handler decorators used to render assigned error templates
+@app.errorhandler(401)                                            #** Required error handler decorators used to render assigned error templates
 def unauthorized(e):
     return render_template('401.html'), 401
 
@@ -263,7 +263,7 @@ def page_not_found(e):
 def internal_server_error(e):
     return render_template('500.html'), 500
 
-#** Included the code you need to initialize the database structure when you run the application.
+                                                                  #** Included the code needed to initialize the database structure when running the application.
 if __name__=='__main__':
     db.create_all()
     app.run(debug = True)
